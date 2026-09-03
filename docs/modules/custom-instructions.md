@@ -8,6 +8,22 @@ Copilot doesn't know your team's rules. So you tell it "use a DTO, not the entit
 
 Custom instructions are plain Markdown files Copilot reads *before* every chat and agent request. Say it once, in a file, in the repo.
 
+## Watch it first
+
+<div class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/0jEzUhU8bLc"
+    title="Your codebase, your rules: Customizing Copilot with context engineering"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+
+**[Your codebase, your rules: Customizing Copilot with context engineering](https://www.youtube.com/watch?v=0jEzUhU8bLc)**, 16 min, official GitHub channel.
+
+Optional, and it goes wider than this module: it's VS Code only, and it covers instructions alongside MCP and prompt files. Watch it for the *why*. The lab below is the *how*, on both surfaces.
+
 ## What you'll build
 
 Three files, each doing a different job:

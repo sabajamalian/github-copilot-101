@@ -10,6 +10,24 @@ A skill is a folder Copilot pulls into context **only when the task matches**. I
 
 Concretely: if you keep typing the same six-step request, that's a skill.
 
+## Watch it first
+
+<div class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/-yKALFS5ewY"
+    title="How to use agents, skills, and instructions in Copilot CLI"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+
+**[How to use agents, skills, and instructions in Copilot CLI](https://www.youtube.com/watch?v=-yKALFS5ewY)**, 6 min, official GitHub channel.
+
+Optional. It's CLI-flavoured and covers all three customization types, so the skills portion is only part of it. Good for seeing a skill fire in a real session before you write one.
+
+Want to watch someone build a skill from scratch instead? [RDT: Building agent Skills and the new MCP release](https://www.youtube.com/watch?v=2AZJbyD-9ME) is an hour-long livestream that does exactly that.
+
 ## What you'll build
 
 ```text

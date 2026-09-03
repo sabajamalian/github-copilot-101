@@ -13,6 +13,24 @@ That last part is the interesting bit. An agent with `tools: ["read", "search"]`
     Old files still work and VS Code offers a rename quick-fix. If you're following an older
     tutorial that says "chat mode", it means this.
 
+## Watch it first
+
+<div class="video-embed">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/-yKALFS5ewY"
+    title="How to use agents, skills, and instructions in Copilot CLI"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+
+**[How to use agents, skills, and instructions in Copilot CLI](https://www.youtube.com/watch?v=-yKALFS5ewY)**, 6 min, official GitHub channel.
+
+Optional. The custom agents section is the last stretch, after instructions and skills. Watch it for the shape of an `.agent.md` file and how you invoke one.
+
+If you'd rather watch someone build agents live for two hours, Rubber Duck Thursdays did it twice: [part one](https://www.youtube.com/watch?v=-eRjenGV2OM) and [part two](https://www.youtube.com/watch?v=X9jbNK1006E).
+
 ## What you'll build
 
 ```text
