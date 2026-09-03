@@ -65,6 +65,8 @@ Where a module would genuinely be nicer with another module's output, the finish
 
 ## Before you start
 
+[Installation](installation.md) gets Copilot running in VS Code, IntelliJ IDEA, Eclipse, or the CLI, and compares what each one supports.
+
 [Setup](setup.md) takes about five minutes: clone, `mvn spring-boot:run`, one curl to confirm it's alive.
 
 ## Then what

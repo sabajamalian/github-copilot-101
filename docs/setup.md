@@ -6,10 +6,7 @@ Five minutes. Clone, run, confirm Copilot is alive.
 
 - **JDK 21 or newer.** Check with `java -version`.
 - **Maven 3.9+.** Check with `mvn -v`.
-- **A GitHub Copilot subscription**, and at least one of:
-    - [Copilot in VS Code](https://code.visualstudio.com/docs/copilot/setup)
-    - [Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
-    - [The GitHub Copilot app](https://github.com/features/ai/github-app)
+- **A GitHub Copilot subscription**, and at least one harness installed: VS Code or Copilot CLI for the labs, IntelliJ IDEA or Eclipse if that's your Java setup, or the GitHub Copilot app. [Installation](installation.md) has the steps for each, plus a feature comparison.
 - **curl**, or any HTTP client you like.
 
 No Docker, no database to install. The app uses H2 in memory and seeds itself on startup.

@@ -7,7 +7,20 @@ Every link on this site, in one place. All checked live.
 | Link | Why |
 | --- | --- |
 | [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) | The support matrix. Which customization works on which surface. Check this before you build anything. |
+| [Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) | Every Copilot feature, per IDE and per IDE version. Public preview, updated often. |
 | [Customization library](https://docs.github.com/en/copilot/tutorials/customization-library) | GitHub's ready-made recipes for instructions, skills, and agents |
+
+## Installing Copilot
+
+| Link | Surface |
+| --- | --- |
+| [Install the Copilot extension in your environment](https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-extension) | Every IDE, with a tool switcher |
+| [Set up Copilot in VS Code](https://code.visualstudio.com/docs/copilot/setup) | VS Code |
+| [Using Copilot in JetBrains IDEs](https://docs.github.com/en/copilot/concepts/agents/copilot-in-jetbrains) | JetBrains, compares plugin vs AI Assistant vs CLI |
+| [GitHub Copilot plugin](https://plugins.jetbrains.com/plugin/17718-github-copilot) | JetBrains Marketplace, version compatibility |
+| [Install Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) | CLI, all package managers |
+| [GitHub Copilot app quickstart](https://docs.github.com/en/copilot/get-started/quickstart-copilot-app) | Copilot app, install and first session |
+| [Copilot plans and access](https://docs.github.com/en/copilot/get-started/what-is-github-copilot#get-access) | Prerequisite for all of the above |
 
 ## Copilot CLI
 
@@ -149,6 +162,7 @@ Several popular "Copilot custom instructions" videos are excellent but come from
 
 ## Also on this site
 
+- [Installation](installation.md)
 - [Setup](setup.md)
 - [Copilot CLI](modules/copilot-cli.md)
 - [GitHub Copilot app](modules/copilot-app.md)
