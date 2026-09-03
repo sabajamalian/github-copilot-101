@@ -1,0 +1,41 @@
+name: Copilot summary
+
+# Example workflow from the Copilot CLI module.
+#
+# This file deliberately lives in solutions/copilot-cli/ rather than
+# .github/workflows/ so it never runs in this repository or in anyone's fork.
+# To try it, copy it to .github/workflows/copilot-summary.yml in your own repo.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install -g @github/copilot
+
+      - name: Summarize recent changes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          copilot -p "Summarize the last 20 commits to library-api as a bullet list.
+          Write the result to summary.md." \
+            --allow-tool='shell(git:*)' \
+            --allow-tool='write' \
+            --no-ask-user \
+            -s
+
+      - run: cat summary.md >> "$GITHUB_STEP_SUMMARY"

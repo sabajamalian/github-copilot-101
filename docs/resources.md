@@ -9,6 +9,49 @@ Every link on this site, in one place. All checked live.
 | [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) | The support matrix. Which customization works on which surface. Check this before you build anything. |
 | [Customization library](https://docs.github.com/en/copilot/tutorials/customization-library) | GitHub's ready-made recipes for instructions, skills, and agents |
 
+## Copilot CLI
+
+| Link | What it's good for |
+| --- | --- |
+| [About Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) | The concept, what it can and can't do |
+| [Quickstart](https://docs.github.com/en/copilot/get-started/cli-quickstart) | Install, log in, first session |
+| [Install Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) | Every install method and its prerequisites |
+| [Authenticate](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/authenticate-copilot-cli) | Token precedence, PAT requirements, GHE hosts |
+| [Configure](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/configure-copilot-cli) | `settings.json`, models, MCP, logging |
+| [Using Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview) | Sessions, prompts, input prefixes |
+| [Allowing tools](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools) | Permission pattern syntax, deny beats allow |
+| [Multiple sessions](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions) | Running work side by side |
+| [Connecting to VS Code](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/connecting-vs-code) | `/ide` and what it gives the agent |
+| [Run programmatically](https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/run-cli-programmatically) | Headless flags, `-p`, piping, output formats |
+| [Automate with Actions](https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions) | The workflow pattern and `copilot-requests` |
+| [Copilot CLI in GitHub Actions](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/copilot-cli-in-github-actions) | Billing, org policy, when to use gh-aw instead |
+| [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) | Every flag and slash command |
+| [Programmatic reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-programmatic-reference) | Headless flags in one table |
+| [Config directory reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference) | What lives in `~/.copilot` |
+| [Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models) | Which models each surface offers |
+| [github/copilot-cli](https://github.com/github/copilot-cli) | Release notes and issues |
+
+## GitHub Copilot app
+
+| Link | What it's good for |
+| --- | --- |
+| [About the GitHub Copilot app](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app) | The concept, platforms, plan and policy requirements |
+| [Quickstart](https://docs.github.com/en/copilot/get-started/quickstart-copilot-app) | Install, sign in, add a project, first session |
+| [Agent sessions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/agent-sessions) | Session types, modes, models, housekeeping |
+| [Canvas extensions](https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-canvas-extensions) | What canvases are and how to build one |
+| [Repository configuration](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/repository-configuration) | The `github-app.yml` schema and trust model |
+| [Slash commands](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/slash-commands) | Every command the app supports |
+| [Customize the app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/customize-github-copilot-app) | Skills, MCP, plugins, agents |
+| [Issues and pull requests](https://docs.github.com/en/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests) | My work, PR review, agent merge |
+| [Automations](https://docs.github.com/en/copilot/how-tos/github-copilot-app/using-automations) | Local and cloud scheduled prompts |
+| [Deep links](https://docs.github.com/en/copilot/how-tos/github-copilot-app/open-with-deep-links) | Every `ghapp://` URL shape |
+| [BYOK models](https://docs.github.com/en/copilot/how-tos/github-copilot-app/use-byok-models) | Using your own provider |
+| [Cloud and local sandboxes](https://docs.github.com/en/copilot/concepts/about-cloud-and-local-sandboxes) | What a cloud sandbox is and how it's billed |
+| [About plugins](https://docs.github.com/en/copilot/concepts/agents/about-plugins) | The plugin format and marketplaces |
+| [Supported surfaces for policies](https://docs.github.com/en/copilot/reference/supported-surfaces-for-policies) | Admins: which policy affects which surface |
+| [Download](https://github.com/features/ai/github-app) | The product page |
+| [github/app](https://github.com/github/app) | Release assets, changelog, issues |
+
 ## Custom instructions
 
 | Link | Surface |
@@ -107,6 +150,8 @@ Several popular "Copilot custom instructions" videos are excellent but come from
 ## Also on this site
 
 - [Setup](setup.md)
+- [Copilot CLI](modules/copilot-cli.md)
+- [GitHub Copilot app](modules/copilot-app.md)
 - [Custom instructions](modules/custom-instructions.md)
 - [Agent skills](modules/agent-skills.md)
 - [Custom agents](modules/custom-agents.md)

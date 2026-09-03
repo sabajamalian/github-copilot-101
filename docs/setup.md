@@ -8,10 +8,13 @@ Five minutes. Clone, run, confirm Copilot is alive.
 - **Maven 3.9+.** Check with `mvn -v`.
 - **A GitHub Copilot subscription**, and at least one of:
     - [Copilot in VS Code](https://code.visualstudio.com/docs/copilot/setup)
-    - [Copilot CLI](https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-cli)
+    - [Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
+    - [The GitHub Copilot app](https://github.com/features/ai/github-app)
 - **curl**, or any HTTP client you like.
 
 No Docker, no database to install. The app uses H2 in memory and seeds itself on startup.
+
+The three customization modules use VS Code or the CLI, and every step has a tab for each. The [Copilot CLI](modules/copilot-cli.md) and [GitHub Copilot app](modules/copilot-app.md) modules walk you through installing their own tool, so you don't need it before you start.
 
 ## Clone and run
 
@@ -87,6 +90,13 @@ It also has eight deliberate flaws. They're listed in [`library-api/README.md`](
 Leave them alone for now. Each lab points at a different one.
 
 ## Where to go
+
+The surfaces:
+
+- [Copilot CLI](modules/copilot-cli.md)
+- [GitHub Copilot app](modules/copilot-app.md)
+
+The customizations:
 
 - [Custom instructions](modules/custom-instructions.md)
 - [Agent skills](modules/agent-skills.md)

@@ -1,0 +1,34 @@
+# Example .github/github-app.yml for the GitHub Copilot app.
+#
+# Copy to .github/github-app.yml in your clone, then accept it in the app.
+# The app will not apply this file until you review and accept it, and any
+# edit made outside the app (including whitespace) requires accepting again.
+
+instructions: |
+  This is a Spring Boot 3 / Java 21 REST API. Use Maven, not Gradle.
+  Run tests with: mvn -f library-api/pom.xml test
+
+scripts:
+  - name: Warm up Maven
+    command: mvn -f library-api/pom.xml -q dependency:go-offline
+    triggers:
+      - session.create
+
+  - name: Run the API
+    command: mvn -f library-api/pom.xml spring-boot:run
+
+  - name: Clean up
+    command: mvn -f library-api/pom.xml -q clean
+    triggers:
+      - session.archive
+
+# Rust regex. Capture group 1 is the URL, or a bare port that becomes
+# http://localhost:PORT. This matches Spring Boot's startup line:
+#   Tomcat started on port(s): 8080 (http)
+server_ready_pattern: 'Tomcat started on port\(s\): (\d+)'
+
+auto_open_in_browser: true
+
+automation:
+  auto_issue_session: true
+  remote_control: false

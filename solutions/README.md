@@ -2,12 +2,19 @@
 
 Finished files from every module, so you can skip ahead or unstick yourself.
 
-Nothing here is loaded automatically. Copy what you want into `.github/`.
+Nothing here is loaded automatically. Copy what you want into `.github/`, or in the case of
+`copilot-cli/`, run it where you like.
 
 ## Layout
 
 ```text
 solutions/
+├── copilot-cli/
+│   ├── README.md
+│   ├── daily-review.sh                 → run it from anywhere
+│   └── copilot-summary.yml             → .github/workflows/ in YOUR repo
+├── copilot-app/
+│   └── github-app.yml                  → .github/github-app.yml
 ├── custom-instructions/
 │   ├── copilot-instructions.md         → .github/copilot-instructions.md
 │   └── instructions/
@@ -28,6 +35,17 @@ solutions/
 ## Copy one module
 
 ```bash
+# Copilot CLI
+cp solutions/copilot-cli/daily-review.sh .
+chmod +x daily-review.sh
+# The workflow deliberately stays out of .github/workflows/ here. See
+# solutions/copilot-cli/README.md before copying it into your own repo.
+
+# GitHub Copilot app
+mkdir -p .github
+cp solutions/copilot-app/github-app.yml .github/github-app.yml
+# Then accept the configuration in the app when it prompts you.
+
 # Custom instructions
 mkdir -p .github/instructions
 cp solutions/custom-instructions/copilot-instructions.md .github/copilot-instructions.md
@@ -43,7 +61,7 @@ mkdir -p .github/agents
 cp solutions/custom-agents/agents/*.agent.md .github/agents/
 ```
 
-## Copy all three
+## Copy all the customizations
 
 ```bash
 mkdir -p .github/instructions .github/skills .github/agents

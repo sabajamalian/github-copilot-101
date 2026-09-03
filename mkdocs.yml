@@ -40,6 +40,8 @@ nav:
   - Start here: index.md
   - Setup: setup.md
   - Modules:
+      - Copilot CLI: modules/copilot-cli.md
+      - GitHub Copilot app: modules/copilot-app.md
       - Custom instructions: modules/custom-instructions.md
       - Agent skills: modules/agent-skills.md
       - Custom agents: modules/custom-agents.md
