@@ -340,7 +340,7 @@ Rule of thumb: "always use records instead of entities" is an instruction. "Here
 | [VS Code: agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) | The richest frontmatter reference, VS Code specifics |
 | [Agent Skills specification](https://github.com/agentskills/agentskills) | The open standard, not GitHub-specific |
 | [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) | Which surfaces support skills |
-| [github/awesome-copilot](https://github.com/github/awesome-copilot) | Community skill collection. Read before installing, it's third-party. |
+| [Awesome GitHub Copilot: skills](https://awesome-copilot.github.com/skills/) | Community skill gallery, browsable and filterable. Read before installing, it's third-party. |
 | [How to use agents, skills, and instructions in Copilot CLI](https://www.youtube.com/watch?v=-yKALFS5ewY) | GitHub's own video walkthrough |
 | [GitHub Skills: customize your Copilot experience](https://github.com/skills/customize-your-github-copilot-experience) | Free hands-on course, under 30 minutes |
 

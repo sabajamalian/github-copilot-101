@@ -156,9 +156,13 @@ Several popular "Copilot custom instructions" videos are excellent but come from
 
 ## Community
 
+The [customization library](https://docs.github.com/en/copilot/tutorials/customization-library) above is GitHub's own, and it's deliberately small. Awesome Copilot is the community's version: far more of it, none of it reviewed by GitHub. Read a file before you install it, particularly a skill carrying `allowed-tools: shell`.
+
 | Link | Note |
 | --- | --- |
-| [github/awesome-copilot](https://github.com/github/awesome-copilot) | Instructions, skills, and agents you can drop in. Lives in the GitHub org but is community-contributed, so read anything before installing it. |
+| [Awesome GitHub Copilot](https://awesome-copilot.github.com/) | The gallery. Browse and filter community agents, instructions, skills, plugins, and canvas extensions, then copy or install straight from the page. |
+| [Learning Hub](https://awesome-copilot.github.com/learning-hub/) | Articles and guides on the same site |
+| [github/awesome-copilot](https://github.com/github/awesome-copilot) | The repo behind the gallery. Read the raw file here before installing, or open a PR to contribute one. Also one of the Copilot app's default plugin marketplaces. |
 
 ## Also on this site
 

@@ -89,8 +89,10 @@ That's the whole argument for customization: you're not writing better prompts, 
 
 ## Where to go next
 
+You wrote every one of those files by hand, and that was the point: you now know what goes in them and why. From here you don't have to. [Awesome GitHub Copilot](https://awesome-copilot.github.com/) is a browsable gallery of community-contributed agents, instructions, skills, plugins, and canvas extensions, filterable by type and copyable straight from the page. Read a file before you install it, especially any skill that asks for shell access.
+
 - [Copilot CLI](modules/copilot-cli.md) and the [GitHub Copilot app](modules/copilot-app.md) are the two surfaces this all runs on. Everything you built above works on both, unchanged.
-- [Customization library](https://docs.github.com/en/copilot/tutorials/customization-library) has ready-made recipes for all three types
-- [github/awesome-copilot](https://github.com/github/awesome-copilot) is the community collection, read before installing
+- [Customization library](https://docs.github.com/en/copilot/tutorials/customization-library) has ready-made recipes for all three types, written by GitHub rather than the community
+- [github/awesome-copilot](https://github.com/github/awesome-copilot) is the repo behind the gallery, where you read the raw file or open a PR to contribute one
 - [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) tells you what works where
 - [All resources](resources.md)
