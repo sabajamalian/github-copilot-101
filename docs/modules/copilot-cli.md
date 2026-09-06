@@ -287,6 +287,10 @@ There's a second, separate axis that people conflate with this one:
 
 Excluding a tool removes it from the menu. Denying it leaves it visible and refuses it. Different failure modes, different debugging.
 
+GitHub's [allowing and denying tool use guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools)
+documents both layers, including saved approvals and deny-rule precedence. Read it before
+expanding the permissions for the headless exercises.
+
 In-session: `/permissions` to switch modes, `/add-dir` to grant access to another directory, `/list-dirs` to see what's granted, `/reset-allowed-tools` to start over.
 
 !!! warning "`--yolo` and `--allow-all`"
@@ -496,6 +500,10 @@ The finished copy is in [`solutions/copilot-cli/`](https://github.com/sabajamali
 
 In Actions you don't need a PAT at all. The built-in `GITHUB_TOKEN` works, as long as you ask for the right permission.
 
+The Copilot-specific setup is documented in [using Copilot CLI with `GITHUB_TOKEN`](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli-in-actions).
+GitHub's [workflow authentication guide](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token)
+explains how workflow-level and job-level `permissions` restrict that token.
+
 ```yaml title=".github/workflows/copilot-summary.yml"
 name: Copilot summary
 
@@ -547,11 +555,19 @@ env:
   COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
 ```
 
+Create `COPILOT_TOKEN` using GitHub's [Actions secrets guide](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
+Store the token as a secret, never in the workflow file or a committed shell script.
+
 Which you pick changes who pays. `GITHUB_TOKEN` in an organization repo meters to the organization; a PAT meters to that user's seat. If your seat comes from an org, an admin also has to have **Allow use of Copilot CLI billed to the organization** turned on.
 
 For anything more elaborate than a single step, GitHub points at [GitHub Agentic Workflows](https://github.com/github/gh-aw) rather than hand-rolling `copilot` invocations.
 
 ### Safety when nobody's watching
+
+Use GitHub's [Actions secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
+for least-privilege credentials, untrusted input, and action pinning. The
+[Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents)
+explains agent limitations and why generated changes still need review.
 
 - **Never run `--yolo` against content you didn't write.** Issue bodies, PR descriptions, dependency READMEs, and web fetches are all attacker-controllable in the general case.
 - **`--secret-env-vars`** strips named variables out of shell and MCP environments, and redacts them from output. Use it for anything sensitive that has to be in scope.
@@ -590,6 +606,10 @@ For anything more elaborate than a single step, GitHub points at [GitHub Agentic
 | [Config directory reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference) | What lives in `~/.copilot` and what you may edit |
 | [Supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models) | Which models reach which surface |
 | [github/copilot-cli](https://github.com/github/copilot-cli) | Releases, issues, discussions |
+| [GitHub Actions: workflow authentication](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token) | Pass `GITHUB_TOKEN` and restrict its permissions |
+| [GitHub Actions: using secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) | Store a PAT for the optional user-billed workflow |
+| [GitHub Actions: secure use reference](https://docs.github.com/en/actions/reference/security/secure-use) | Untrusted input, secret handling, and dependency pinning |
+| [GitHub: Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents) | CLI capabilities, risks, and review responsibilities |
 
 ## Next
 

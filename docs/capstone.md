@@ -16,6 +16,11 @@ Ship **late fees**: charge a member when a loan comes back past its due date.
 
 None of them tell it *what* to build. That's still your job, and it's the point: the setup handles the how so your prompt only has to carry the what.
 
+Microsoft's [agent customization guide](https://code.visualstudio.com/docs/agents/concepts/customization)
+explains how persistent instructions, reusable workflows, and specialized roles combine.
+GitHub's [customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
+is the reference for which parts your chosen surface supports.
+
 ## Setup
 
 You need the artifacts from all three modules. Either do the modules, or copy the finished files:
@@ -79,6 +84,15 @@ It can read and search but not edit, so you get a critique and not a second roun
 
 If it flags something real, hand the finding back to `feature-builder`. Two agents, one pipeline, and you're the one deciding what ships.
 
+GitHub's [writing tests tutorial](https://docs.github.com/en/copilot/tutorials/write-tests)
+shows how to ask for boundary and failure cases. Apply that here by checking the exact due-date
+boundary, the replacement-cost cap, and repeated payment requests. Read the assertions yourself;
+a passing test can still encode the wrong policy.
+
+Before merging, use GitHub's [protected branches guide](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+to configure required reviews and status checks if this is a shared repository. The reviewer
+agent's response doesn't create a merge requirement.
+
 ## The bit worth noticing
 
 `BigDecimal` for money without being asked. The fee cap enforced in a service rather than a controller. Tests for the exactly-on-time boundary. A `LoanService` finally existing.
@@ -86,6 +100,16 @@ If it flags something real, hand the finding back to `feature-builder`. Two agen
 Nothing in the prompt asked for any of that. All of it came from files you wrote once.
 
 That's the whole argument for customization: you're not writing better prompts, you're building a place for the context to live so you stop retyping it.
+
+## Official follow-up
+
+| Reference | Apply it here |
+| --- | --- |
+| [GitHub: Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents) | Understand the limits of agent-generated code and review feedback |
+| [VS Code: trust and safety](https://code.visualstudio.com/docs/agents/concepts/trust-and-safety) | Review diffs and keep approvals and trust boundaries in place |
+| [Microsoft Learn: develop unit tests using Copilot](https://learn.microsoft.com/en-us/training/modules/develop-unit-tests-using-github-copilot-tools/) | Practice edge-case test generation; exercises use C# and .NET rather than this lab's Java stack |
+| [Microsoft Learn: code reviews and pull requests](https://learn.microsoft.com/en-us/training/modules/code-reviews-pull-requests-github-copilot/) | Evaluate suggested changes before accepting them |
+| [Microsoft Learn: responsible AI with Copilot](https://learn.microsoft.com/en-us/training/modules/responsible-ai-with-github-copilot/) | Review operational risks and accountability for generated output |
 
 ## Where to go next
 

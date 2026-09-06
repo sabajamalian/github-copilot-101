@@ -29,6 +29,10 @@ The short version of how to choose between those three: instructions change *how
 
 GitHub's [customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) has the full comparison, including which editors support what.
 
+Microsoft's [agent customization guide](https://code.visualstudio.com/docs/agents/concepts/customization)
+explains how these pieces fit together in VS Code, including when you need tools or hooks to enforce
+an action. The labs below apply those choices to `library-api`'s controllers, tests, and review workflow.
+
 ## Pick one and go
 
 <div class="grid cards" markdown>
@@ -69,8 +73,15 @@ Where a module would genuinely be nicer with another module's output, the finish
 
 [Setup](setup.md) takes about five minutes: clone, `mvn spring-boot:run`, one curl to confirm it's alive.
 
+New to Copilot? Microsoft Learn's [Introduction to GitHub Copilot](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/)
+covers setup and the chat and completion experiences. GitHub's
+[prompt engineering guide](https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering)
+explains how to give the agent a concrete goal, relevant code, and examples before trying the lab prompts.
+
 ## Then what
 
 The [capstone](capstone.md) ships an overdue-fee feature using instructions, skills, and agents together. Skip it if you only came for one module.
 
-[Resources](resources.md) is every official link in one place: GitHub Docs, VS Code docs, Microsoft Learn, GitHub Skills, and the GitHub YouTube channel.
+[Resources](resources.md) groups official GitHub and Microsoft references by topic, including Java
+setup, prompting, testing, permissions, and automation. Community examples and the open skills
+specification are labeled separately.

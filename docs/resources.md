@@ -1,6 +1,12 @@
 # Resources
 
-Every link on this site, in one place. All checked live.
+References for the labs, grouped by the task you're doing. GitHub Docs, Microsoft Learn, and
+Microsoft's VS Code documentation are the primary sources for product behavior. Use the
+surface-specific documentation when a setting or permission behaves differently across tools.
+
+Training modules provide guided practice, sometimes in a different programming language.
+Marketplace listings, community examples, and the open skills specification are labeled separately;
+being hosted on GitHub doesn't make a resource official product documentation.
 
 ## Start here
 
@@ -9,6 +15,8 @@ Every link on this site, in one place. All checked live.
 | [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) | The support matrix. Which customization works on which surface. Check this before you build anything. |
 | [Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) | Every Copilot feature, per IDE and per IDE version. Public preview, updated often. |
 | [Customization library](https://docs.github.com/en/copilot/tutorials/customization-library) | GitHub's ready-made recipes for instructions, skills, and agents |
+| [VS Code: agent customization](https://code.visualstudio.com/docs/agents/concepts/customization) | Microsoft's explanation of instructions, skills, agents, tools, and hooks, with a decision table |
+| [GitHub: Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents) | Capabilities, limitations, and responsible use of the CLI, app, cloud agent, and code review |
 
 ## Installing Copilot
 
@@ -21,6 +29,30 @@ Every link on this site, in one place. All checked live.
 | [Install Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) | CLI, all package managers |
 | [GitHub Copilot app quickstart](https://docs.github.com/en/copilot/get-started/quickstart-copilot-app) | Copilot app, install and first session |
 | [Copilot plans and access](https://docs.github.com/en/copilot/get-started/what-is-github-copilot#get-access) | Prerequisite for all of the above |
+
+## Java workspace setup
+
+Use these alongside [Installation](installation.md) and [Setup](setup.md). The repo already contains
+the Spring Boot application; you don't need to generate another project.
+
+| Reference | What it covers |
+| --- | --- |
+| [Microsoft Learn: Microsoft Build of OpenJDK downloads](https://learn.microsoft.com/en-us/java/openjdk/download) | JDK distributions for supported platforms, including the JDK 21 used by the labs |
+| [VS Code: Java build tools](https://code.visualstudio.com/docs/java/java-build) | Discover Maven projects, run goals, and inspect dependencies |
+| [VS Code: Spring Boot](https://code.visualstudio.com/docs/java/java-spring-boot) | Spring extensions and running and debugging the application |
+| [VS Code: testing Java](https://code.visualstudio.com/docs/java/java-testing) | Run, debug, and inspect Java tests from the editor |
+| [VS Code: Workspace Trust](https://code.visualstudio.com/docs/editing/workspaces/workspace-trust) | Restricted Mode and when project code and agents are allowed to run |
+
+## Prompting and choosing context
+
+These support the [custom instructions lab](modules/custom-instructions.md) and help when a
+lab prompt produces a generic answer or misses a requirement.
+
+| Reference | What it covers |
+| --- | --- |
+| [GitHub: prompt engineering for Copilot Chat](https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering) | Specific requirements, examples, relevant files, and breaking a task into smaller steps |
+| [VS Code: prompt files](https://code.visualstudio.com/docs/agent-customization/prompt-files) | Manually invoked reusable prompts, how they differ from skills, and agent-host limitations |
+| [Microsoft Learn: prompt engineering with Copilot](https://learn.microsoft.com/en-us/training/modules/introduction-prompt-engineering-with-github-copilot/) | Guided practice in giving context, writing prompts, and refining results |
 
 ## Copilot CLI
 
@@ -36,7 +68,8 @@ Every link on this site, in one place. All checked live.
 | [Multiple sessions](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/work-with-multiple-sessions) | Running work side by side |
 | [Connecting to VS Code](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/connecting-vs-code) | `/ide` and what it gives the agent |
 | [Run programmatically](https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/run-cli-programmatically) | Headless flags, `-p`, piping, output formats |
-| [Automate with Actions](https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions) | The workflow pattern and `copilot-requests` |
+| [Automate with Actions](https://docs.github.com/en/copilot/how-tos/copilot-cli/automate-copilot-cli/automate-with-actions) | Workflow structure, scheduling, and a PAT-based example |
+| [Use Copilot CLI with `GITHUB_TOKEN`](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli-in-actions) | The `copilot-requests: write` permission and organization policy for the lab workflow |
 | [Copilot CLI in GitHub Actions](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/copilot-cli-in-github-actions) | Billing, org policy, when to use gh-aw instead |
 | [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) | Every flag and slash command |
 | [Programmatic reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-programmatic-reference) | Headless flags in one table |
@@ -86,7 +119,6 @@ Every link on this site, in one place. All checked live.
 | [Add skills for the cloud agent](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) | GitHub.com, plus `gh skill` |
 | [VS Code: agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) | VS Code, richest frontmatter reference |
 | [Built-in skills](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/built-in-skills) | What ships already |
-| [Agent Skills specification](https://github.com/agentskills/agentskills) | The open standard, not GitHub-specific |
 
 ## Custom agents
 
@@ -102,14 +134,44 @@ Every link on this site, in one place. All checked live.
 | [Your first custom agent](https://docs.github.com/en/copilot/tutorials/customization-library/custom-agents/your-first-custom-agent) | Tutorial |
 | [Prepare an org for custom agents](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/prepare-for-custom-agents) | Admins |
 
+## Review, testing, and safe agent use
+
+Use these while running the [skills lab](modules/agent-skills.md), the
+[reviewer and builder agents](modules/custom-agents.md), and the [capstone](capstone.md).
+The built-in Copilot code review service is separate from the `api-reviewer` profile you create here.
+
+| Reference | What it covers |
+| --- | --- |
+| [GitHub: writing tests with Copilot](https://docs.github.com/en/copilot/tutorials/write-tests) | Unit and integration tests, edge cases, and checking generated results; examples use Python |
+| [GitHub: about Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) | Built-in review capabilities, availability, and configuration |
+| [VS Code: approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals) | Session permission levels, tool and URL approvals, and terminal command controls |
+| [VS Code: trust and safety](https://code.visualstudio.com/docs/agents/concepts/trust-and-safety) | Review of generated changes, trust boundaries, and sandboxing concepts |
+| [GitHub: protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) | Required reviews and status checks before changes can merge |
+
+## Automation and publishing
+
+These explain the credentials and review controls behind the
+[CLI headless exercises](modules/copilot-cli.md#headless), plus this site's Pages deployment.
+
+| Reference | What it covers |
+| --- | --- |
+| [GitHub Actions: workflow authentication](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token) | Passing `GITHUB_TOKEN` and setting minimum workflow or job permissions |
+| [GitHub Actions: using secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) | Repository, environment, and organization secrets for the optional PAT-based workflow |
+| [GitHub Actions: secure use reference](https://docs.github.com/en/actions/reference/security/secure-use) | Least privilege, untrusted workflow input, secret handling, and pinning actions |
+| [GitHub Pages: custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) | Build artifacts, deployment permissions, and the `github-pages` environment |
+
 ## Courses
 
-| Link | Length |
+| Course | When to use it |
 | --- | --- |
-| [GitHub Skills: customize your Copilot experience](https://github.com/skills/customize-your-github-copilot-experience) | Under 30 min, hands-on, free |
-| [MS Learn: configure and customize Copilot in VS Code](https://learn.microsoft.com/en-us/training/modules/configure-customize-github-copilot-visual-studio-code/) | ~1 hr, guided |
-| [MS Learn: Copilot agent mode](https://learn.microsoft.com/en-us/training/modules/github-copilot-agent-mode/) | ~1 hr |
-| [MS Learn: GitHub Copilot learning path](https://learn.microsoft.com/en-us/training/paths/copilot/) | Full path |
+| [Microsoft Learn: introduction to GitHub Copilot](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/) | Before the labs, for setup, chat, completions, and troubleshooting |
+| [GitHub Skills: customize your Copilot experience](https://github.com/skills/customize-your-github-copilot-experience) | Another hands-on customization course |
+| [Microsoft Learn: configure instructions and custom agents](https://learn.microsoft.com/en-us/training/modules/configure-customize-github-copilot-visual-studio-code/) | Instructions, agents, and handoffs in VS Code; assumes C# experience |
+| [Microsoft Learn: Copilot agent mode](https://learn.microsoft.com/en-us/training/modules/github-copilot-agent-mode/) | Guided practice working with agent mode |
+| [Microsoft Learn: develop unit tests using Copilot](https://learn.microsoft.com/en-us/training/modules/develop-unit-tests-using-github-copilot-tools/) | Edge-case test generation and execution; exercises use C# and .NET |
+| [Microsoft Learn: code reviews and pull requests](https://learn.microsoft.com/en-us/training/modules/code-reviews-pull-requests-github-copilot/) | Interpret review feedback and combine it with human judgment and testing |
+| [Microsoft Learn: responsible AI with Copilot](https://learn.microsoft.com/en-us/training/modules/responsible-ai-with-github-copilot/) | Limitations, risk mitigation, and accountability for generated output |
+| [Microsoft Learn: GitHub Copilot learning path](https://learn.microsoft.com/en-us/training/paths/copilot/) | Broader study beyond these labs |
 
 ## Video
 
@@ -156,13 +218,22 @@ Several popular "Copilot custom instructions" videos are excellent but come from
 
 ## Community
 
-The [customization library](https://docs.github.com/en/copilot/tutorials/customization-library) above is GitHub's own, and it's deliberately small. Awesome Copilot is the community's version: far more of it, none of it reviewed by GitHub. Read a file before you install it, particularly a skill carrying `allowed-tools: shell`.
+The [customization library](https://docs.github.com/en/copilot/tutorials/customization-library) above
+is part of GitHub Docs. Awesome Copilot is a community-contributed collection hosted in the GitHub
+organization, separate from the product documentation. Read each file before installing it,
+particularly a skill carrying `allowed-tools: shell`.
 
 | Link | Note |
 | --- | --- |
 | [Awesome GitHub Copilot](https://awesome-copilot.github.com/) | The gallery. Browse and filter community agents, instructions, skills, plugins, and canvas extensions, then copy or install straight from the page. |
 | [Learning Hub](https://awesome-copilot.github.com/learning-hub/) | Articles and guides on the same site |
 | [github/awesome-copilot](https://github.com/github/awesome-copilot) | The repo behind the gallery. Read the raw file here before installing, or open a PR to contribute one. Also one of the Copilot app's default plugin marketplaces. |
+
+## Open specification
+
+| Reference | Scope |
+| --- | --- |
+| [Agent Skills specification](https://github.com/agentskills/agentskills) | The cross-tool open standard linked from GitHub's skills documentation. Consult the GitHub or VS Code references above for product-specific support. |
 
 ## Also on this site
 

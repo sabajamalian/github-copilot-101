@@ -10,6 +10,11 @@ The app is [Copilot CLI](copilot-cli.md) with a UI wrapped around the parts that
 
 That's not a marketing framing, it's the actual architecture. The docs say the app is built on Copilot CLI, and it shows: your skills, MCP servers, custom agents, and instruction files all work in the app with no changes, and `/chronicle` reads history from both surfaces.
 
+GitHub's [app overview](https://docs.github.com/en/copilot/concepts/agents/github-copilot-app)
+documents that foundation and the available session types. Its
+[Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents)
+describes the app's capabilities and limitations.
+
 Three things make it worth a separate module:
 
 | | Why it's different here |
@@ -234,6 +239,10 @@ automation:
 
 Triggered and manual scripts run with environment variables including `GH_TOKEN`, `GH_HOST`, `COPILOT_WORKSPACE_PATH`, `COPILOT_ROOT_PATH`, `COPILOT_DEFAULT_BRANCH`, and per-account tokens. GitHub's own warning is blunt about the consequence: never configure a script to log or persist these environment variables.
 
+Read the [repository configuration reference](https://docs.github.com/en/copilot/reference/github-copilot-app-reference/repository-configuration)
+before accepting this file. It defines the trust prompt, script environment, trigger names,
+and server detection behavior used in this exercise.
+
 !!! warning "The app won't trust the file until you say so"
     The app does not apply instructions, scripts, or settings from `github-app.yml` until you review and accept the configuration. Changes made through the app UI are trusted automatically and written back to the file. Changes made outside the app, **including to whitespace or comments**, require you to accept it again. Until you do, the app keeps using the previously accepted settings, which looks exactly like the file being ignored.
 
@@ -268,6 +277,12 @@ Worth knowing about, not worth a full exercise each.
 **Pull requests.** Open a PR's **Files changed** tab to review the diff, leave review comments inline, or just ask the agent to make the change. Then submit from the PR detail view. `/pr-open`, `/pr-merge`, and `/pr-fix-checks` cover the common actions.
 
 **Agent merge.** Turn it on and the session reads your PR, fixes what's blocking it, and merges as soon as GitHub allows. It runs in the background, survives app restarts, and switches itself off once the PR merges.
+
+Before enabling automated merging on a shared repository, review GitHub's
+[protected branches guide](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+Required reviews and status checks belong in repository settings; an agent prompt doesn't configure them.
+Microsoft Learn's [code reviews and pull requests module](https://learn.microsoft.com/en-us/training/modules/code-reviews-pull-requests-github-copilot/)
+covers interpreting Copilot feedback and combining it with human judgment and testing.
 
 **Automations.** Scheduled prompts, either **local** (your machine) or **cloud** (runs even when your computer is off). Triggers include manual, hourly, daily, weekly, CRON for local ones, and issue or pull request events with optional filters.
 
@@ -311,6 +326,9 @@ Worth knowing about, not worth a full exercise each.
 | [About plugins](https://docs.github.com/en/copilot/concepts/agents/about-plugins) | The plugin format and marketplaces |
 | [Supported surfaces for policies](https://docs.github.com/en/copilot/reference/supported-surfaces-for-policies) | Admins: which policy affects which surface |
 | [github/app](https://github.com/github/app) | Downloads, release notes, issues, discussions |
+| [GitHub: Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents) | App-specific risks, limitations, and oversight |
+| [GitHub: protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) | Required reviews and status checks before an automated merge |
+| [Microsoft Learn: code reviews and pull requests](https://learn.microsoft.com/en-us/training/modules/code-reviews-pull-requests-github-copilot/) | Guided practice evaluating Copilot review feedback |
 
 ## Next
 

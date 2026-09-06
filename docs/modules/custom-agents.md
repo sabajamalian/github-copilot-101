@@ -92,6 +92,11 @@ Finish with the single change that would improve the codebase most, and nothing 
 
 The `tools` list is the whole point. `read` and `search` and nothing else.
 
+GitHub's [custom agent configuration reference](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
+defines the tool aliases and the default when `tools` is omitted. In VS Code,
+[approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals) control
+execution of available tools. Keep shell and write-capable tools out of this reviewer's tool list.
+
 ### 2. The builder
 
 Create `.github/agents/feature-builder.agent.md`:
@@ -267,6 +272,11 @@ A subagent is a separate agent spun up with its own context window to handle a p
 
 This is where the two surfaces genuinely diverge.
 
+Microsoft's [subagents guide](https://code.visualstudio.com/docs/agents/run/subagents) covers
+delegation and isolated context in VS Code. GitHub's
+[CLI custom agents overview](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents)
+describes the CLI behavior. Use the reference for the surface you're running.
+
 === "VS Code"
 
     Let one agent call another with the `agents` frontmatter property, which acts as an
@@ -355,6 +365,11 @@ Tool aliases you'll actually use: `read`, `edit`, `search`, `execute` (also spel
 | [Your first custom agent](https://docs.github.com/en/copilot/tutorials/customization-library/custom-agents/your-first-custom-agent) | GitHub's walkthrough, plus three more ready-made agents |
 | [How to use agents, skills, and instructions in Copilot CLI](https://www.youtube.com/watch?v=-yKALFS5ewY) | GitHub's own video walkthrough |
 | [MS Learn: configure instructions and custom agents](https://learn.microsoft.com/en-us/training/modules/configure-customize-github-copilot-visual-studio-code/) | Longer guided module, includes agent handoffs |
+| [VS Code: subagents](https://code.visualstudio.com/docs/agents/run/subagents) | Invocation patterns and delegation to custom agents |
+| [VS Code: approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals) | Tool execution controls alongside the agent's tool list |
+| [GitHub: about Copilot code review](https://docs.github.com/en/copilot/concepts/agents/code-review) | The built-in review service, separate from the `api-reviewer` profile created here |
+| [Microsoft Learn: code reviews and pull requests](https://learn.microsoft.com/en-us/training/modules/code-reviews-pull-requests-github-copilot/) | Interpret Copilot reviews and combine suggestions with human review and testing |
+| [GitHub: Copilot Agents application card](https://docs.github.com/en/copilot/responsible-use/agents) | Capabilities, limitations, and human oversight across GitHub's agentic features |
 
 ## Next
 

@@ -8,6 +8,10 @@ Copilot doesn't know your team's rules. So you tell it "use a DTO, not the entit
 
 Custom instructions are plain Markdown files Copilot reads *before* every chat and agent request. Say it once, in a file, in the repo.
 
+The file types in this lab follow GitHub's [repository instructions guide](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions-in-your-ide/add-repository-instructions-in-your-ide).
+Microsoft's [VS Code reference](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
+explains always-on instructions, file-based rules, and manual attachment.
+
 ## Watch it first
 
 <div class="video-embed">
@@ -124,6 +128,10 @@ Handle these centrally in a `@RestControllerAdvice` and return a consistent JSON
 ```
 
 The `applyTo` glob is what makes this file conditional. It's relative to the **workspace root**, which is why it starts with `library-api/`.
+
+Keep the [VS Code instruction format reference](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
+open when changing the glob. The Java layering and error-handling rules above are this lab's
+conventions; the documentation describes how Copilot discovers and applies the file.
 
 ### 3. Scoped instructions for tests
 
@@ -248,7 +256,7 @@ That gap is what the file bought you.
 ## Gotchas
 
 - **Instructions do nothing for inline completions.** The grey ghost text as you type ignores them completely. Chat and agent only. This is the single most common "it isn't working" report.
-- **No `applyTo` means never applied automatically.** A file in `.github/instructions/` without an `applyTo` glob has to be attached by hand every time. Easy to forget, easy to misdiagnose.
+- **Use `applyTo` for file scoping.** The [VS Code reference](https://code.visualstudio.com/docs/agent-customization/custom-instructions) also documents selection by a matching `description`. Keep the explicit glob in this lab so the intended Java paths are clear.
 - **Globs are relative to the workspace root.** `src/main/java/**` matches nothing here. It has to be `library-api/src/main/java/**/*.java`.
 - **Copilot CLI defines no precedence order.** It reads `.github/copilot-instructions.md`, `.github/instructions/`, `~/.copilot/`, `AGENTS.md`, `CLAUDE.md`, and `GEMINI.md`, and the docs are explicit that there is no defined ordering between them. Don't build a layered override scheme on top of that assumption. Use `/instructions` to see reality.
 - **Longer is not better.** Past a certain length, individual rules start getting ignored. If a rule matters, it needs to be short and specific. "Write clean code" does nothing.
@@ -267,6 +275,9 @@ That gap is what the file bought you.
 | [Customization library](https://docs.github.com/en/copilot/tutorials/customization-library) | Eight more ready-made instruction recipes |
 | [MS Learn: configure instructions and custom agents](https://learn.microsoft.com/en-us/training/modules/configure-customize-github-copilot-visual-studio-code/) | A longer guided module, C# rather than Java |
 | [GitHub Skills: customize your Copilot experience](https://github.com/skills/customize-your-github-copilot-experience) | Free hands-on course, under 30 minutes |
+| [GitHub: prompt engineering](https://docs.github.com/en/copilot/concepts/prompting/prompt-engineering) | Concrete requirements, examples, and iteration when a rule is missed |
+| [Microsoft Learn: prompt engineering with Copilot](https://learn.microsoft.com/en-us/training/modules/introduction-prompt-engineering-with-github-copilot/) | Practice giving context and refining requests |
+| [VS Code: agent customization](https://code.visualstudio.com/docs/agents/concepts/customization) | Decide whether a requirement belongs in instructions, a skill, or an enforcement mechanism |
 
 ## Next
 

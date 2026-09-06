@@ -30,6 +30,10 @@ If your Copilot access comes through an organization or enterprise, an admin can
 
     **For the Java app in this repo**, also install the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) and the [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack). Copilot works without them, but you won't get Java language support, so no jump-to-definition and no test running. See the [VS Code Java tutorial](https://code.visualstudio.com/docs/java/java-tutorial).
 
+    For this repo's build and tests, Microsoft's [Java build tools guide](https://code.visualstudio.com/docs/java/java-build)
+    covers Maven project discovery and dependency management. The [Spring Boot guide](https://code.visualstudio.com/docs/java/java-spring-boot)
+    and [Java testing guide](https://code.visualstudio.com/docs/java/java-testing) cover running the API and debugging tests.
+
     !!! tip "On GHE.com?"
         Managed user accounts need a setting change before sign-in works. See [Authenticate to GHE.com](https://docs.github.com/en/copilot/how-tos/configure-personal-settings/authenticate-to-ghecom?tool=vscode#authenticating-from-vs-code).
 
@@ -189,6 +193,11 @@ What does BookController do?
 ```
 
 A real answer that names actual methods means you're set. A generic answer about Spring controllers means Copilot isn't seeing your workspace.
+
+In VS Code, also check [Workspace Trust](https://code.visualstudio.com/docs/editing/workspaces/workspace-trust).
+Restricted Mode disables agents and limits features that execute project code. Review the repository
+before granting trust. Once trusted, [agent approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals)
+control which tools and terminal commands can run.
 
 [Setup](setup.md) has the per-harness version of this check, plus cloning and running the app.
 

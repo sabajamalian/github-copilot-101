@@ -4,7 +4,7 @@ Five minutes. Clone, run, confirm Copilot is alive.
 
 ## What you need
 
-- **JDK 21 or newer.** Check with `java -version`.
+- **JDK 21 or newer.** Check with `java -version`. If you need a distribution, [Microsoft Build of OpenJDK downloads](https://learn.microsoft.com/en-us/java/openjdk/download) includes JDK 21 packages for supported platforms.
 - **Maven 3.9+.** Check with `mvn -v`.
 - **A GitHub Copilot subscription**, and at least one harness installed: VS Code or Copilot CLI for the labs, IntelliJ IDEA or Eclipse if that's your Java setup, or the GitHub Copilot app. [Installation](installation.md) has the steps for each, plus a feature comparison.
 - **curl**, or any HTTP client you like.
@@ -22,6 +22,11 @@ mvn spring-boot:run
 ```
 
 First run pulls dependencies and takes a minute or two. After that it's a few seconds.
+
+Using VS Code? Microsoft's [Java build tools guide](https://code.visualstudio.com/docs/java/java-build)
+explains how the Maven extension discovers `pom.xml` and runs goals. The
+[Spring Boot guide](https://code.visualstudio.com/docs/java/java-spring-boot) covers running and debugging
+the application from the editor. Keep using the existing `library-api` project for these labs.
 
 ## Confirm it works
 
@@ -77,6 +82,12 @@ Those two inconsistent failures are the app's real behavior, and they're the rea
 
 !!! tip "Open the repo root, not `library-api/`"
     Copilot discovers `.github/copilot-instructions.md`, `.github/skills/`, and `.github/agents/` relative to the workspace or repo root. Open `library-api/` on its own and every lab will look like it silently did nothing.
+
+For discovery rules and additional locations, use the surface-specific references:
+[VS Code custom instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
+and [Copilot CLI custom instructions](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-custom-instructions).
+If VS Code blocks the agent entirely, check [Workspace Trust](https://code.visualstudio.com/docs/editing/workspaces/workspace-trust)
+before changing your customization files.
 
 ## About the code
 

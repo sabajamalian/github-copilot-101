@@ -10,6 +10,10 @@ A skill is a folder Copilot pulls into context **only when the task matches**. I
 
 Concretely: if you keep typing the same six-step request, that's a skill.
 
+See GitHub's [agent skills overview](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+for supported surfaces and skill locations. Microsoft's [VS Code skills guide](https://code.visualstudio.com/docs/agent-customization/agent-skills)
+documents the folder structure, frontmatter, and supporting files used in this lab.
+
 ## Watch it first
 
 <div class="video-embed">
@@ -202,11 +206,16 @@ If either of those now FAILs, that is good news, not bad. It means error handlin
 and `smoke.sh` should be updated to expect `404`.
 ```
 
-!!! warning "About `allowed-tools`"
-    You can add `allowed-tools: shell` to the frontmatter to let a skill run commands without
+!!! warning "About `allowed-tools` in Copilot CLI"
+    In Copilot CLI, you can add `allowed-tools: shell` to the frontmatter to let a skill run commands without
     asking you first. It's convenient and it removes your last checkpoint. Only do it for
     scripts you have read yourself, from a source you trust. Left off, as it is above, Copilot
     asks before running `smoke.sh`. That's the safer default and it costs you one keypress.
+
+GitHub's [CLI skills guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)
+documents that pre-approval behavior and its risks. For VS Code, check the separate
+[approvals and permissions guide](https://code.visualstudio.com/docs/agents/run/approvals);
+the active session's permission settings matter when a skill invokes tools.
 
 ### 3. Load them
 
@@ -269,6 +278,12 @@ Then verify:
 mvn -f library-api/pom.xml test
 ```
 
+GitHub's [writing tests tutorial](https://docs.github.com/en/copilot/tutorials/write-tests)
+shows how to request edge cases and inspect generated assertions. Its examples use Python;
+apply the prompting approach to this lab's Java tests. Microsoft's
+[Java testing guide](https://code.visualstudio.com/docs/java/java-testing) covers running and
+debugging those tests in VS Code.
+
 You can also force a skill instead of waiting for Copilot to choose it. Reference it by name with a slash:
 
 ```text
@@ -325,7 +340,7 @@ Rule of thumb: "always use records instead of entities" is an instruction. "Here
 - **`name` must match the directory name**, lowercase with hyphens. Mismatches and invalid characters (slashes, colons, dots, spaces) make the skill fail to load **silently**. No error, it just isn't there. If a skill doesn't show up in `/skills list`, check this first.
 - **Only `name` and `description` are required.** `license` is optional. Everything else you may have seen is editor-specific.
 - **A vague `description` means the skill never fires.** It's the routing rule. Include the words people actually type.
-- **`allowed-tools: shell` removes a safety step.** It pre-approves running terminal commands, which is exactly what a prompt injection would want. Read the script first.
+- **In Copilot CLI, `allowed-tools: shell` removes a safety step.** It pre-approves running terminal commands, which is exactly what a prompt injection would want. Read the script first.
 - **Reference bundled files from `SKILL.md`.** GitHub's docs say the whole directory is made available; VS Code's docs say to reference extra files explicitly. Referencing them works on both, so just do it.
 - **Added a skill mid-session in the CLI?** Run `/skills reload` rather than wondering why nothing happened.
 - **Skills go further than prompt files.** They work in VS Code, Copilot CLI, GitHub.com, Copilot code review, and the cloud agent. Prompt files don't. If you're choosing between them today, this is the deciding factor.
@@ -338,11 +353,20 @@ Rule of thumb: "always use records instead of entities" is an instruction. "Here
 | [Add skills (Copilot CLI)](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills) | Full `/skills` command list, `allowed-tools`, script example |
 | [Add skills (GitHub.com and cloud agent)](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) | Same feature from the GitHub.com side, plus `gh skill` |
 | [VS Code: agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) | The richest frontmatter reference, VS Code specifics |
-| [Agent Skills specification](https://github.com/agentskills/agentskills) | The open standard, not GitHub-specific |
 | [Copilot customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) | Which surfaces support skills |
-| [Awesome GitHub Copilot: skills](https://awesome-copilot.github.com/skills/) | Community skill gallery, browsable and filterable. Read before installing, it's third-party. |
 | [How to use agents, skills, and instructions in Copilot CLI](https://www.youtube.com/watch?v=-yKALFS5ewY) | GitHub's own video walkthrough |
 | [GitHub Skills: customize your Copilot experience](https://github.com/skills/customize-your-github-copilot-experience) | Free hands-on course, under 30 minutes |
+| [VS Code: approvals and permissions](https://code.visualstudio.com/docs/agents/run/approvals) | Tool approvals and terminal command permissions when a skill runs |
+| [VS Code: prompt files](https://code.visualstudio.com/docs/agent-customization/prompt-files) | Compare manually invoked prompts with skills and check agent-host limitations |
+| [GitHub: writing tests with Copilot](https://docs.github.com/en/copilot/tutorials/write-tests) | Unit and integration test prompting, with Python examples |
+| [VS Code: testing Java](https://code.visualstudio.com/docs/java/java-testing) | Run and debug the tests generated by `add-endpoint` |
+
+## Community examples and the specification
+
+These supplement the product documentation above:
+
+- [Agent Skills specification](https://github.com/agentskills/agentskills) defines the open standard across compatible tools.
+- [Awesome GitHub Copilot: skills](https://awesome-copilot.github.com/skills/) is a community gallery. Review each skill and its scripts before installing.
 
 ## Next
 

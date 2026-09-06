@@ -19,6 +19,18 @@ what it does. Taught against a real Spring Boot API that lives in this repo.
 
 The three customization modules have instructions for both **VS Code** and **Copilot CLI**.
 
+## Official references
+
+Use the [reference index](https://sabajamalian.github.io/github-copilot-101/resources/) alongside
+the labs. It groups GitHub Docs, Microsoft Learn, and Microsoft's VS Code documentation by topic,
+with community examples labeled separately.
+
+Start with GitHub's [customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet)
+for cross-editor support, Microsoft's [agent customization guide](https://code.visualstudio.com/docs/agents/concepts/customization)
+for choosing between instructions, skills, and agents, or
+[Introduction to GitHub Copilot](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/)
+on Microsoft Learn if you're new to the tool.
+
 ## What's in here
 
 ```text
@@ -59,3 +71,6 @@ One manual step: **Settings → Pages → Source → GitHub Actions**. The workf
 for you, and the first deploy fails without it.
 
 Change `site_url` and `repo_url` in `mkdocs.yml` to point at your fork.
+
+GitHub's [custom workflows for Pages guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+explains the build artifact, deployment permissions, and environment used by this workflow.
